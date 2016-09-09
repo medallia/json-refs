@@ -376,4 +376,43 @@ describe('json-refs Issues', function () {
         .then(done, done);
     });
   });
+
+  describe('Issue #77', function () {
+    it('combined URI\'s should handle windows pathing correctly', function (done) {
+      JsonRefs.resolveRefsAt('../documents/test-document.yaml', {
+        loaderOptions: {
+          processContent: function (res, callback) {
+            callback(undefined, YAML.safeLoad(res.text));
+          }
+        },
+        relativeBase: relativeBase
+      })
+        .then(function (results) {
+          assert.notEqual(results.refs['#/remote/relative'].missing, true);
+        })
+        .then(done, done);
+    });
+  });
+
+  describe('Issue #80', function () {
+    it('should resolve nested references correctly', function (done) {
+      JsonRefs.resolveRefsAt('nested-refs/b.yaml', {
+        filter: 'relative',
+        loaderOptions: {
+          processContent: function (res, callback) {
+            callback(undefined, YAML.safeLoad(res.text));
+          }
+        },
+        relativeBase: relativeBase
+      })
+        .then(function (results) {
+          assert.ok(!_.has(results, 'resolved.definitions.x.properties.children.items.$ref'));
+          assert.equal(results.resolved.definitions.x.properties.children.items.type, 'object');
+
+          assert.ok(!_.has(results, 'resolved.responses.500.schema.properties.error_type.$ref'));
+          assert.equal(results.resolved.responses['500'].schema.properties.error_type.type, 'string');
+        })
+        .then(done, done);
+    });
+  });
 });
