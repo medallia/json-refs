@@ -411,6 +411,8 @@ describe('json-refs Issues', function () {
 
           assert.ok(!_.has(results, 'resolved.responses.500.schema.properties.error_type.$ref'));
           assert.equal(results.resolved.responses['500'].schema.properties.error_type.type, 'string');
+
+          assert.ok(!_.has(results, 'resolved.responses.500.schema.properties.per_property_error_messages.items.properties.error_type.$ref'));
         })
         .then(done, done);
     });
