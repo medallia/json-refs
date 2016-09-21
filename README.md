@@ -5,6 +5,9 @@ json-refs is a simple library for interacting with [JSON References][json-refere
 since JSON References are a combination of `Object` structure and a `JSON Pointer`, this library also provides some
 features for JSON Pointers as well.
 
+## Collaboration guidelines for Medallia's fork
+[Read here](https://github.medallia.com/medallia/api-codegen/tree/c161ae1aeb863eb8011243b5877b15cfd424c583#collaboration-guidelines).
+
 ## Project Badges
 
 * Build status: [![Build Status](https://travis-ci.org/whitlockjc/json-refs.svg)](https://travis-ci.org/whitlockjc/json-refs)
