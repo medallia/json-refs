@@ -6,7 +6,7 @@ since JSON References are a combination of `Object` structure and a `JSON Pointe
 features for JSON Pointers as well.
 
 ## Collaboration guidelines for Medallia's fork
-[Read here](https://github.medallia.com/medallia/api-codegen#collaboration-guidelines).
+[Read here](https://github.com/medallia/swagger-codegen#collaboration-guidelines-for-medallias-fork).
 
 ## Project Badges
 
