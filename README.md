@@ -1,3 +1,6 @@
+# WARNING: Don't use this repo. 
+# Use https://github.medallia.com/medallia/json-refs instead
+
 # json-refs
 
 json-refs is a simple library for interacting with [JSON References][json-reference-draft-spec] and
